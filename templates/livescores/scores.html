@@ -21,12 +21,15 @@
     </tr>
   </thead>
   <tbody>
+
+  {% for tot in total%}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{tot.3}}</th>
+      <td>{{tot.0}}</td>
+      <td>{{tot.2}}</td>
+      <td>{{tot.1}}</td>
     </tr>
+  {%endfor%}
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
