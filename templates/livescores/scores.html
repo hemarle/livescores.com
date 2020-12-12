@@ -1,6 +1,8 @@
 {%extends 'base.html'%}
 
 {%block content%}
+
+<h1 align="center">Scores for: {{date}}</h1>
 <div class="row">
     <div class="col">
         <h2> Scores</h2>
@@ -14,7 +16,7 @@
         <table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th scope="col">Date</th>
+      <th scope="col">Time</th>
       <th scope="col">Home</th>
       <th scope="col">Score</th>
       <th scope="col">Away</th>
@@ -30,17 +32,7 @@
       <td>{{tot.1}}</td>
     </tr>
   {%endfor%}
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
   </tbody>
 </table>
 

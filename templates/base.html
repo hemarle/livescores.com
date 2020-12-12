@@ -10,12 +10,34 @@
 
 <div class="container">
     <div class="row">
-        <div class="container">
+        <div class="col">
             <h1>
-                Welcome to Marle Bet
+                Welcome to Marle Livescores
             </h1>
         </div>
     </div>
+
+    <div class="row">
+        <div class="column">
+            <h1> Choose the day you want </h1>
+
+        </div>
+
+    </div>
+<br>
+    <div class="row">
+        <div class="column mt-4">
+        <form action="{%url 'scores' %}" method="post">
+            {%csrf_token%}
+            <input type="date" name="date">
+            <input type="submit" name="Submit">
+
+
+        </form>
+
+        </div>
+    </div>
+</div>
 
 
 

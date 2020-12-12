@@ -3,12 +3,14 @@ from bs4 import BeautifulSoup as BS
 from  urllib.request import Request, urlopen
 # Create your views here.
 
-link='https://livescores.com'
+link_raw='https://livescores.com/soccer/{}'
 
 def home(request):
     return render(request, 'base.html')
 
 def scores(request):
+    date_raw= request.POST['date']
+    link= link_raw.format(date_raw)
 
     link_req=Request(link, headers={'user-agent':'XYZ-3.0'})
     link_open=urlopen(link_req, timeout=20).read()
@@ -28,6 +30,10 @@ def scores(request):
         total.append((home_team, away_team, team_score, match_time))
 
     context={
-        'total':total
+        'total':total,
+        'date': date_raw
     }
+
+
+
     return render(request, 'livescores/scores.html', context)
